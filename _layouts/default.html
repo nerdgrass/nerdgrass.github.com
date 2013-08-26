@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>{{ page.title }}</title>
+      <meta name="viewport" content="width=device-width">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+      <!-- syntax highlighting CSS -->
+      <link rel="stylesheet" href="/css/syntax.css">
 
-        <!-- Pure CSS -->
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/base-min.css">
+      <!-- Pure CSS -->
+      <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+      <!-- Webfonts -->
+      <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
 
-    </head>
-    <body>
-      <div class="pure-g-r" id="layout">
-        <div class="sidebar pure-u">
-          <header class="header">
-            <hgroup>
-              <h1 class="brand-title"><a href="/">{{ site.name }}</a></h1>
-              <h2 class="brand-tagline">Creating a blog layout using Pure</h2>
-            </hgroup>
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/css/main.css">
 
-            <nav class="nav">
-              <ul class="nav-list">
-                <li class="nav-item">
-                  <a class="pure-button" href="http://purecss.io">Pure</a>
-                </li>
-                <li class="nav-item">
-                  <a class="pure-button" href="http://yuilibrary.com">YUI Library</a>
-                </li>
+  </head>
+  <body>
+    <div class="pure-g-r" id="layout">
+      <div class="sidebar pure-u">
+        <header class="header">
+          <hgroup>
+            <h1 class="brand-title"><a href="/">{{ site.name }}</a></h1>
+            <h2 class="brand-tagline">Bluegrass, Code, &amp; Art</h2>
+          </hgroup>
+
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a class="pure-button" href="http://purecss.io">Pure</a>
+              </li>
+              <li class="nav-item">
+                <a class="pure-button" href="http://yuilibrary.com">YUI Library</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+
+      <div class="pure-u-1">
+        <div class="content">
+          {{ content }}
+
+          <footer class="footer">
+            <div class="pure-menu pure-menu-open pure-menu-horizontal">
+              <ul>
+                <li><a href="http://purecss.io/">About</a></li>
+                <li><a href="http://twitter.com/yuilibrary/">Twitter</a></li>
+                <li><a href="http://github.com/yui/pure/">Github</a></li>
               </ul>
-            </nav>
-          </header>
-        </div>
-
-        <div class="pure-u-1">
-          <div class="content">
-            {{ content }}
-
-            <footer class="footer">
-              <div class="pure-menu pure-menu-horizontal pure-menu-open">
-                <ul>
-                  <li><a href="http://purecss.io/">About</a></li>
-                  <li><a href="http://twitter.com/yuilibrary/">Twitter</a></li>
-                  <li><a href="http://github.com/yui/pure/">Github</a></li>
-                </ul>
-              </div>
-            </footer>
-          </div>
+            </div>
+          </footer>
         </div>
       </div>
-    </body>
+    </div>
+  </body>
 </html>
