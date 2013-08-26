@@ -1,0 +1,23 @@
+---
+layout: default
+title: Nerdgrass
+---
+
+<div class="posts">
+	{% for post in site.posts %}
+		<section class="post">
+		    <header class="post-header">
+
+		        <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+
+		        <p class="post-meta">
+		            By <a href="#" class="post-author">Tilo Mitra</a> under <a class="post-category post-category-design" href="#">CSS</a> <a class="post-category post-category-pure" href="#">Pure</a>
+		        </p>
+		    </header>
+
+		    <div class="post-description">
+		        <p>{{ post.excerpt }}</p>
+		    </div>
+		</section>
+	{% endfor %}
+</div>
