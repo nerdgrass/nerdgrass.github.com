@@ -1,3 +1,4 @@
+/* Base Styles */
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -10,7 +11,7 @@ body {
 
 a {
     text-decoration: none;
-    color: rgb(142, 142, 214);
+    color: #7f9ebb;
 }
 a:hover,
 a:focus {
@@ -21,6 +22,7 @@ a:focus {
     padding-left: 25%; /* "left col (nav + list)" width */
     position: relative;
 }
+/* Sidebar Styles! */
 .sidebar {
     position: fixed;
     top: 0;
@@ -41,9 +43,10 @@ a:focus {
 .brand-title {
     text-transform: uppercase;
 }
+.brand-title:hover a {color: #adc2d6;}
 .brand-tagline {
     font-weight: 300;
-    color: rgb(142, 142, 214);
+    color: #7f9ebb;
 }
 .nav-list {
     margin: 0;
@@ -57,14 +60,13 @@ a:focus {
 }
 .nav-item a {
     background: transparent;
-    border: 3px solid rgb(103, 103, 180);
-    color: #fff;
+    border: 3px solid #7f9ebb;
+    color: #7f9ebb;
     margin-top: 1em;
 }
 .nav-item a:hover,
 .nav-item a:focus {
-    border: 3px solid rgb(142, 142, 214);
-    color: rgb(142, 142, 214);
+    border: 3px solid #adc2d6;
     text-decoration: none;
 }
 
@@ -82,14 +84,14 @@ a:focus {
     padding: 2em 3em 0;
 }
 .post-content {
-    width: 85%;
-    margin: 0 auto;
+
 }
 .post {
     padding-bottom: 2em;
 }
 .post p {color: #2c3c4a;}
 .post-title {
+    font-size: 1.8em;
     color: #2d455b;
     margin-bottom: 0.2em;
 }
