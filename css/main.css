@@ -3,6 +3,10 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #e6eff8;
+}
 
 a {
     text-decoration: none;
@@ -12,31 +16,24 @@ a:hover,
 a:focus {
     text-decoration: underline;
 }
-body {
-    font-family: 'Source Sans Pro', sans-serif;
-}
 
-/* LAYOUT CSS */
 #layout {
     padding-left: 25%; /* "left col (nav + list)" width */
     position: relative;
 }
-
 .sidebar {
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 25%;
+    width: 20%;
     margin-left: -25%;
-    background:#2E3939;
+    background:#2E3939 url('../img/circuitsbg.png');
     color: #fff;
 }
-
 .header {
     margin: 50% 2em 0;
     text-align: right;
 }
-
 .brand-title,
 .brand-tagline {
     margin: 0;
@@ -48,7 +45,6 @@ body {
     font-weight: 300;
     color: rgb(142, 142, 214);
 }
-
 .nav-list {
     margin: 0;
     padding: 0;
@@ -85,14 +81,20 @@ body {
 .content {
     padding: 2em 3em 0;
 }
-
+.post-content {
+    width: 85%;
+    margin: 0 auto;
+}
 .post {
     padding-bottom: 2em;
 }
+.post p {color: #2c3c4a;}
 .post-title {
-    font-size: 2em;
-    color: #222;
+    color: #2d455b;
     margin-bottom: 0.2em;
+}
+a.post-title {
+    font-size: 1.8em;
 }
 .post-avatar {
     border-radius: 50px;
@@ -138,7 +140,7 @@ body {
     color: #fff;
     text-shadow: 0 1px 1px #333;
 }
-
+/*Footer*/
 .footer {
     text-align: center;
     padding: 1em 0;
@@ -151,26 +153,27 @@ body {
 .footer .pure-menu a:focus {
     background: none;
 }
-
+/* Override for pure styling menus weirdly */
+.pure-menu.pure-menu-open {
+    background: none;
+}
+/*Responsive Junk*/
 @media (max-width: 767px) {
     .sidebar {
         width: 100%;
         position: relative;
         margin: 0;
     }
-
     .header {
         text-align: center;
         top: auto;
         margin: 3em auto;
         position: static;
     }
-
     #layout {
         padding: 0;
     }
 }
-
 @media (max-width: 480px) {
     .content {
         padding: 2em 1em 0;

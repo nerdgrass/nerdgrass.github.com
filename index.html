@@ -2,21 +2,15 @@
 layout: default
 title: Nerdgrass
 ---
-
 <div class="posts">
 	{% for post in site.posts %}
 		<section class="post">
 		    <header class="post-header">
-		    	<img class="post-avatar"
-                     alt="Tilo Mitra's avatar" src="http://dummyimage.com/48"
-                     height="48" width="48">
-
-		        <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-
-		        <p class="post-meta">
-		            By <a href="#" class="post-author">Tilo Mitra</a> under <a class="post-category post-category-design" href="#">CSS</a> <a class="post-category post-category-pure" href="#">Pure</a>
-		        </p>
+		        <h2 class="post-title"><a class="post-title" href="{{ post.url }}">{{ post.title }}</a></h2>
 		    </header>
+		    <p class="post-meta">
+                {{ post.date | date: "%B %d %Y" }}
+            </p>
 
 		    <div class="post-description">
 		        <p>{{ post.excerpt }}</p>
