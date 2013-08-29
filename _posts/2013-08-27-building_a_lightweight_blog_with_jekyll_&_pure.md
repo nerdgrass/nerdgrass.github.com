@@ -23,6 +23,6 @@ So away I went! Jekyll's documentation is actually fantastic - following their [
 
 The blog was working now, but it needed some easy styling. I decided to experiment with [Pure](http://www.purecss.io "Pure CSS by YUI"), a lightweight and responsive CSS framework. Pure is a very minimalist framework built by the excellent team at [YUI](http://yuilibrary.com/ "Yes, I know, YUI. Shush.") that boils down CSS frameworks like Bootstrap and Foundation to the absolute barest minimum of what they need to be. The grid is incredibly flexible, and using Pure is as easy as adding in <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css"> to your page header.
 
-Deploying on Github Pages was also super easy. Push to Github, rename the repo to *username*.github.com and… its live! I had no idea it would be that decievingly simple to get a blog up and running.
+Deploying on Github Pages was also super easy. Push to Github, rename the repo to *username*.github.com and… its live! Up and running at *username*.github.io. I had no idea it would be that decievingly simple to get a blog up and running. From there, I just pointed my domain of nerdgrass.com to nerdgrass.github.io.
 
 With a little bit of research and about a day's worth of work, [nerdgrass.com](http://www.nerdgrass.com) lives!
