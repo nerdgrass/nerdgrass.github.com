@@ -70,6 +70,29 @@ a:focus {
     text-decoration: none;
 }
 
+/* Back Button */
+a.back-button {
+    display: inline-block;
+    margin-top: 2em;
+    padding: .5em;
+    background: transparent;
+    border: 3px solid #2d455b;
+    color:#2d455b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+a.back-button:hover,
+a.back-button:focus {
+    border: 3px solid #adc2d6;
+    color: #adc2d6;
+    text-decoration: none;
+}
+a.back-button:before {
+    display: inline-block;
+    margin-right: 10px;
+    content: '\2190';
+}
+
 .content-subhead {
     text-transform: uppercase;
     color: #aaa;
