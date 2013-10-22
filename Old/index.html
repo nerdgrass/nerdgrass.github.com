@@ -1,0 +1,20 @@
+---
+layout: default
+title: Nerdgrass
+---
+<div class="posts animated fadeInUpBig">
+	{% for post in site.posts %}
+		<section class="post">
+		    <header class="post-header">
+		        <h2 class="post-title"><a class="post-title" href="{{ post.url }}">{{ post.title }}</a></h2>
+		    </header>
+		    <p class="post-meta">
+                {{ post.date | date: "%B %d %Y" }}
+            </p>
+
+		    <div class="post-description">
+		        <p>{{ post.excerpt }}</p>
+		    </div>
+		</section>
+	{% endfor %}
+</div>
