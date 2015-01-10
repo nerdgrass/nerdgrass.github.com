@@ -1,8 +1,10 @@
 'use strict';
 
 // Modules for building the build system
-var gulp = require('gulp'),
+var _ = require('lodash'),
+    gulp = require('gulp'),
     gutil = require('gulp-util'),
+    argv = require('yargs').argv,
     gulpif = require('gulp-if'),    
     connect = require('gulp-connect'),
     merge = require('merge-stream'),
@@ -37,6 +39,21 @@ var deploy = require('gulp-gh-pages'),
 //     'time': new Date()
 // }
 
+/**
+ * Weird ass debug stuff I need to go over, but scripts requires it?
+ * Debug mode may be set in one of these manners:
+ * - gulp --debug=[true | false]
+ * - export NODE_DEBUG=[true | false]
+ */
+var DEBUG,
+    USER_DEBUG = (argv.debug || process.env.NODE_DEBUG)
+if (USER_DEBUG === undefined && argv._.indexOf('deploy') > -1) {
+    DEBUG = false
+}
+else {
+    DEBUG = USER_DEBUG !== 'false'
+}
+
 
 //
 // Super Happy Funtime Build System Extraordinaire
@@ -53,7 +70,7 @@ gulp.task('watch', ['default'], function () {
   gulp.watch(['app/index.html'], ['html'])
   // gulp.watch(['app/posts/**'], ['posts', 'rss'])
 
-  // scripts(true)
+  scripts(true)
   // LR crap
   connect.server({
     root: ['dist'],
@@ -66,58 +83,59 @@ gulp.task('watch', ['default'], function () {
 gulp.task('styles', ['cleanstyles'], function () {
   gulp.src('app/styles/*.scss')
     .pipe(sass())
-    .pipe(gulp.dest('dist/styles'));
+    .pipe(gulp.dest('dist/styles'))
+    
 });
 
 // Images task (Moves images & media to /dist)
 gulp.task('images', function () {
   return gulp.src('app/images/**')
     .pipe(gulp.dest('dist/images'))
-    .pipe(connect.reload())
+    .pipe(connect.reload());
 })
 
 // HTML task (Moves index.html to /dist)
 gulp.task('html', function () {
   return gulp.src('app/index.html')
     .pipe(gulp.dest('dist/'))
-    .pipe(connect.reload())
+    .pipe(connect.reload());
 })
 
 // Favicon task (Moves favicon to dist)
 gulp.task('favicon', ['cleanfavicon'], function () {
   return gulp.src('assets/favicon.ico')
     .pipe(gulp.dest('dist'))
-    .pipe(connect.reload())
+    .pipe(connect.reload());
 })
 
 // Scripts task
-// function scripts(watch) {
-//   var args = watch ? _.clone(watchify.args) : {}
-//   args.debug = DEBUG
+function scripts(watch) {
+  var args = watch ? _.clone(watchify.args) : {}
+  args.debug = DEBUG
 
-//   var bundler = browserify('./app/scripts/app.js', args)
+  var bundler = browserify('./app/scripts/app.js', args)
 
-//   if (watch) {
-//     bundler = watchify(bundler)
-//   }
+  if (watch) {
+    bundler = watchify(bundler)
+  }
 
-//   function rebundle() {
-//     gutil.log('Bundling... ')
+  function rebundle() {
+    gutil.log('Bundling... ')
 
-//     return bundler.bundle()
-//       // log errors if they happen
-//       .on('error', function(e) {
-//         gutil.log('Browserify Error', e)
-//       })
-//       .pipe(source('app.js'))
-//       .pipe(gulpif(!DEBUG, streamify(uglify())))
-//       .pipe(gulp.dest('./dist/scripts'))
-//       .pipe(connect.reload())
-//   }
+    return bundler.bundle()
+      // log errors if they happen
+      .on('error', function(e) {
+        gutil.log('Browserify Error', e)
+      })
+      .pipe(source('app.js'))
+      .pipe(gulpif(!DEBUG, streamify(uglify())))
+      .pipe(gulp.dest('./dist/scripts'))
+      .pipe(connect.reload())
+  }
 
-//   bundler.on('update', rebundle)
-//   return rebundle()
-// }
+  bundler.on('update', rebundle)
+  return rebundle()
+}
 
 // Templates task
 // gulp.task('templates', function() {
