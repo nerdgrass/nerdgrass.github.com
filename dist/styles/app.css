@@ -6025,5 +6025,32 @@ th.hide-for-touch {
     display: table-cell !important; }
  }
 
-h1 {
-  color: red; }
+section {
+  min-height: 65vh;
+  padding-top: 4em;
+  padding-bottom: 4em; }
+
+.splash {
+  width: 100%;
+  min-height: 65vh;
+  background: DARKSLATEGRAY; }
+  .splash h1 {
+    margin-top: 1em;
+    color: floralwhite;
+    text-align: center; }
+  .splash h3 {
+    color: floralwhite;
+    text-align: center; }
+
+.about {
+  background: whitesmoke; }
+
+.design {
+  background: whitesmoke; }
+
+.code {
+  background: whitesmoke; }
+
+.footer {
+  background: darkslategray;
+  min-height: 25vh; }

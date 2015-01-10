@@ -84,7 +84,7 @@ gulp.task('styles', ['cleanstyles'], function () {
   gulp.src('app/styles/*.scss')
     .pipe(sass())
     .pipe(gulp.dest('dist/styles'))
-    
+    .pipe(connect.reload());
 });
 
 // Images task (Moves images & media to /dist)
