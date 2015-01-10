@@ -1,1 +1,15 @@
+//
+// Imports
+//
+// Vars & Mixins
+@import "scss/vars.scss";
+// Foundation Settings import
+@import "scss/settings.scss";
+// Foundation import
+@import "../../bower_components/foundation/scss/foundation.scss";
+
+//
+// Styles, remove these to partials once section is complete
+//
+
 h1 {color:red;}
