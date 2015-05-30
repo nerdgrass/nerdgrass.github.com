@@ -1,0 +1,25 @@
+{
+  "name": "nerdgrass.github.com",
+  "version": "1.0.0",
+  "description": "Personal website and blog for Alex Boerstler",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.8.11"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nerdgrass/nerdgrass.github.com.git"
+  },
+  "author": "Alex Boerstler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nerdgrass/nerdgrass.github.com/issues"
+  },
+  "homepage": "https://github.com/nerdgrass/nerdgrass.github.com"
+}
