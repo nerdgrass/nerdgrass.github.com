@@ -1,6 +1,6 @@
-import webpack from 'webpack';
+const webpack = require('webpack');
 
-export default {
+module.exports = {
   entry: `${__dirname}/src/index.js`,
   output: {
     path: `${__dirname}/build`,
@@ -10,7 +10,7 @@ export default {
 
   module: {
     loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' },
+      { test: /\.js?$/, exclude: /node_modules/, loader: 'babel' },
     ],
   },
 
