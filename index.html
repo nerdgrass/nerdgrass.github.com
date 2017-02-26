@@ -22,14 +22,89 @@
       /*pass window height (w/o scroll bars) down to react app, note can't use vh becasue that
       includes scroll bars and mobile browser footer, etc so doesn't give viewable area*/
       html, body { height: 100%; }
-      html { background-color: rgb(0, 120, 0); }
-      #root { background-color: #F0F0F0; min-height: 100%; }
 
       /*required for IE/Edge to be compatible with left:50vw & transform:translate(-50%, 0),
       otherwise there is a phantom div on the right side of the screen (from the left:50vw),
       that the window will scroll to. Note the left:50vw and transform is used to center content
       horizaontally based on vw to prevent content jump when vertical scroll bar show/hide.*/
       body { overflow-x: hidden; }
+
+      /* animated background find a diff place for this */
+      html { background-color:rgba(33, 33, 33, 0.9); }
+      #root { background-color: none; min-height: 100%; }
+
+      @keyframes move-twink-back {
+          from {background-position:0 0;}
+          to {background-position:-10000px 5000px;}
+      }
+      @-webkit-keyframes move-twink-back {
+          from {background-position:0 0;}
+          to {background-position:-10000px 5000px;}
+      }
+      @-moz-keyframes move-twink-back {
+          from {background-position:0 0;}
+          to {background-position:-10000px 5000px;}
+      }
+      @-ms-keyframes move-twink-back {
+          from {background-position:0 0;}
+          to {background-position:-10000px 5000px;}
+      }
+
+      @keyframes move-clouds-back {
+          from {background-position:0 0;}
+          to {background-position:10000px 0;}
+      }
+      @-webkit-keyframes move-clouds-back {
+          from {background-position:0 0;}
+          to {background-position:10000px 0;}
+      }
+      @-moz-keyframes move-clouds-back {
+          from {background-position:0 0;}
+          to {background-position:10000px 0;}
+      }
+      @-ms-keyframes move-clouds-back {
+          from {background-position: 0;}
+          to {background-position:10000px 0;}
+      }
+
+      .stars, .twinkling, .clouds {
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        width:100%;
+        height:100%;
+        display:block;
+        opacity: .99;
+      }
+
+      .stars {
+        background:#000 url('http://www.script-tutorials.com/demos/360/images/stars.png') repeat top center;
+        z-index:-1;
+      }
+
+      .twinkling {
+        background:transparent url('http://www.script-tutorials.com/demos/360/images/twinkling.png') repeat top center;
+        z-index:-1;
+
+        -moz-animation:move-twink-back 200s linear infinite;
+        -ms-animation:move-twink-back 200s linear infinite;
+        -o-animation:move-twink-back 200s linear infinite;
+        -webkit-animation:move-twink-back 200s linear infinite;
+        animation:move-twink-back 200s linear infinite;
+      }
+
+      .clouds {
+          background:transparent url('http://www.script-tutorials.com/demos/360/images/clouds3.png') repeat top center;
+          z-index:-1;
+
+        -moz-animation:move-clouds-back 200s linear infinite;
+        -ms-animation:move-clouds-back 200s linear infinite;
+        -o-animation:move-clouds-back 200s linear infinite;
+        -webkit-animation:move-clouds-back 200s linear infinite;
+        animation:move-clouds-back 200s linear infinite;
+      }
     </style>
 
     <!-- TODO - remove or put own favicon in -->
