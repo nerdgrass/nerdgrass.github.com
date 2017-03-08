@@ -26,12 +26,15 @@ const Background = (props) => {
       zIndex:'5'
     }
   };
+  /* blerg this murders performance
+  <div className="twinkling" />
+  <div className="clouds"/>
+  */
   return (
     <div>
       <div style={style.bg}>
-        <div className="stars"></div>
-        <div className="twinkling"></div>
-        <div className="clouds"></div>
+        <div className="stars" />
+
       </div>
       <div className="" style={style.children}>
         {props.children}
